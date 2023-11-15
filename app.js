@@ -13,7 +13,7 @@ const MongoDBStore = mongodbStore(session);
 const app = express();
 
 const sessionStore = new MongoDBStore ({
-  uri: 'mongodb://localhost:27017',
+  uri: 'mongodb://0.0.0.0:27017',
   databaseName: 'auth-demo',
   collection: 'sessions' // collection in which our session entry is stored
 })
@@ -59,5 +59,5 @@ app.use(function(error, req, res, next) {
 })
 
 db.connectToDatabase().then(function () {
-  app.listen(3000);
+  app.listen(4000);
 });
